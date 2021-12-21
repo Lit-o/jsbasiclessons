@@ -10,19 +10,18 @@ const personaMovieDB = {
     privat: false
 }
 
-// for (let i = 0; i < 2; i++) {
-//     let lastFilm = prompt("Один из последних просмотренных фильмов?", ""),
-//     lastFilmRating = prompt("На сколько оцениваете его?", "");
+for (let i = 0; i < 2; i++) {
+    let lastFilm = prompt("Один из последних просмотренных фильмов?", ""),
+    lastFilmRating = prompt("На сколько оцениваете его?", "");
 
-//     if (lastFilm !== null && lastFilmRating !== null && lastFilm !== "" && lastFilmRating !== "" && lastFilm < 50) {
-//         personaMovieDB.movies[lastFilm] = lastFilmRating 
-//         alert("done")
-//     } else {
-//         alert("error");
-//         i--;
-//     }    
-// }
-
+    if (lastFilm !== null && lastFilmRating !== null && lastFilm !== "" && lastFilmRating !== "" && lastFilm < 50) {
+        personaMovieDB.movies[lastFilm] = lastFilmRating 
+        alert("done")
+    } else {
+        alert("error");
+        i--;
+    }    
+}
 
 if (personaMovieDB.count < 10) {
     alert("Мало кино")
