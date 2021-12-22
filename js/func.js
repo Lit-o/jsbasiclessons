@@ -1,11 +1,11 @@
 "use strict"
 
 let num = 20;
-function showHello(text) {
+function showHelloDeclarationFunc(text) {
     console.log(text);
     let num = 10;
 }
-showHello("Heeey");
+showHelloDeclarationFunc("Heeey");
 console.log(num);
 
 
@@ -22,17 +22,20 @@ function ret() {
 const anotherNum = ret();
 
 
-const expressFunc = function () {
+const expressionFunc = function () {
     console.log("Hello, i am expression func");
 };
-
-expressFunc()
+expressionFunc()
 
 
 const calc2 = (a, b) => {
     return a + b
 }
-// сокращенная запись если функция только в одну строчку
+// сокращенная запись, если функция только в одну строчку
 const calc3 = (a, b) => a + b;
-// сокращенная запись если функция только в одну строчку и один аргумент
+// сокращенная запись, если функция только в одну строчку и один аргумент
 const calc4 = a => a + 5
+
+// сокращенная запись, если функция возвращает литеральное выражение объекта
+// Остаточные параметры параметры по умолчанию и Деструктуризация поддерживаются
+const calc5 = (param1, param2 = 2, [a, b] = [1, 2], {x: c} = {x: a + b}, ...restPar) => ({foo: "bar"})
