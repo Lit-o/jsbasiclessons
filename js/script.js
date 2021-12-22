@@ -23,8 +23,11 @@ function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
         let lastFilm = prompt("Один из последних просмотренных фильмов?", ""),
             lastFilmRating = prompt("На сколько оцениваете его?", "");
-
-        if (lastFilm !== null && lastFilmRating !== null && lastFilm !== "" && lastFilmRating !== "" && lastFilm < 50) {
+        if (lastFilm !== null && 
+            lastFilmRating !== null && 
+            lastFilm !== "" && 
+            lastFilmRating !== "" && 
+            lastFilm.length < 50) {
             personaMovieDB.movies[lastFilm] = lastFilmRating;
             alert("done");
         } else {
@@ -33,7 +36,7 @@ function rememberMyFilms() {
         }
     }
 }
-// rememberMyFilms();
+rememberMyFilms();
 
 
 function detectPersonalLevel() {
@@ -47,7 +50,7 @@ function detectPersonalLevel() {
         alert("error")
     }
 }
-detectPersonalLevel();
+// detectPersonalLevel();
 
 function swowMyDB() {
     if (!personaMovieDB.privat) {
@@ -61,7 +64,7 @@ function writeYourGenres() {
         personaMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i+1}?`, "")
     }
 }
-writeYourGenres();
+// writeYourGenres();
 
 
 
