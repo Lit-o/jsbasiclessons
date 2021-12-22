@@ -17,4 +17,10 @@ console.log(logg.substring(4, 1));
 console.log(logg.substr(4, 3));
 
 
+const num = 12.3;
+console.log(Math.round(num))
+
+const numFromString = "14.2px";
+console.log(parseInt(numFromString));
+console.log(parseFloat(numFromString));
 
