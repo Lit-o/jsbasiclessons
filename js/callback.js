@@ -5,11 +5,9 @@ function first() {
         console.log(1)
     }, 500)
 }
-
 function second() {
     console.log(2);
 }
-
 first();
 second();
 
@@ -22,3 +20,8 @@ function learnJS(lang, callback) {
 learnJS("JS", function() {
     console.log("Да, он действительно это учит");
 })
+
+function done () {
+    console.log("Yes, it's true")
+}
+learnJS("JS", done)

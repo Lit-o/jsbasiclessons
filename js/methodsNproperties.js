@@ -16,7 +16,6 @@ console.log(logg.substring(4, 1));
 // возможны проблемы с поддержкой substr
 console.log(logg.substr(4, 3));
 
-
 const num = 12.3;
 console.log(Math.round(num))
 

@@ -14,10 +14,13 @@ const options = {
     makeTest: function () {
         console.log("Test");
     }
-}
+};
 options.makeTest();
-delete options.name
 
+const {width, height} = options;
+console.log(width, height)
+
+delete options.name;
 
 let counter = 0
 for (let key in options) {

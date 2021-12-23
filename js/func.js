@@ -4,6 +4,7 @@ let num = 20;
 function showHelloDeclarationFunc(text) {
     console.log(text);
     let num = 10;
+    return num
 }
 showHelloDeclarationFunc("Heeey");
 console.log(num);
