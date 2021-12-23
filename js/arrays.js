@@ -36,10 +36,11 @@ console.log(finString)
 function compareNum(a, b) {
     return a - b
 }
-// метод sort внутри себя использует алгоритм быстрой сортировки, поэтому compareNum срабатывает нормально
+// метод sort внутри себя использует алгоритм быстрой сортировки, поэтому compareNum 
+// в параметре срабатывает нормально и сортирует логично
 // http://algolist.ru/sort/quick_sort.php
 const numArr = [15, 1, 9, 22, -10]
-numArr.sort(compareNum)
+numArr.sort((a, b) => a - b)
 console.log(numArr)
 
 
