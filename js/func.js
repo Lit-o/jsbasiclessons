@@ -30,7 +30,9 @@ expressionFunc()
 
 
 const calc2 = (a, b) => {
-    return a + b
+    return (
+        a + b
+    )
 }
 // сокращенная запись, если функция только в одну строчку
 const calc3 = (a, b) => a + b;

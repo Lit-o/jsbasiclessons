@@ -20,7 +20,7 @@ function copyObj(mainObj) {
     for (key in mainObj) {
         objCopy[key] = mainObj[key];
     }
-
+    
     return objCopy;
 }
 
