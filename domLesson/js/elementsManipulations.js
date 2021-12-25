@@ -7,13 +7,13 @@ const box = document.getElementById('box'),
       hearts = wrapper.querySelectorAll('.heart'),
       oneHeart = wrapper.querySelector('.heart');
 
-// box.style.backgroundColor = "blue";
-// box.style.width = "500px";
+box.style.backgroundColor = "blue";
+box.style.width = "500px";
 let num = 200
-box.style.cssText = `background-color: blue; width: ${num}px`
+box.style.cssText = `background-color: blue; width: ${num}px`;
 
 btns[3].style.borderRadius = "100%";
-circles[0].style.backgroundColor = "gold"
+circles[0].style.backgroundColor = "gold";
 
 // for (let i = 0; i < hearts.length; i++) {
 //     hearts[i].style.backgroundColor = "gold"
@@ -21,10 +21,10 @@ circles[0].style.backgroundColor = "gold"
 
 hearts.forEach(item => {
     item.style.backgroundColor = "gold"
-})
+});
 
 
-const div = document.createElement('div')
+const div = document.createElement('div');
 // const text = document.createTextNode('Тут был я') редкий случай
 
 div.classList.add('black');
@@ -38,7 +38,7 @@ hearts[0].before(div);
 hearts[0].after(div);
 // устаревший метод insertBefore(div, hearts[0])
 
-circles[0].remove
+circles[0].remove;
 // удаляет
 // устаревший метод wrapper.removeChild(hearts[1])
 // приходится искать через родителя, 
@@ -47,6 +47,6 @@ hearts[1].replaceWith(circles[0]);
 // устаревший метод wrapper.replaceChild(circles[0], hearts[1])
 
 
-div.innerHTML = "<h1>Hello !</h1>"
-// div.textContent = "Hello"
-div.insertAdjacentHTML('', '<h2>Yep</h2>')
+div.innerHTML = "<h1>Hello !</h1>";
+// div.textContent = "Hello";
+div.insertAdjacentHTML('', '<h2>Yep</h2>');
