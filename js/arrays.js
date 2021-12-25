@@ -2,12 +2,15 @@
 
 const arr = [3, 4, 5, 6];
 
-// del last item
+// del and return last item
 arr.pop() ;
+
 // add item to the end of the array 
 arr.push(10);
-// del first item
+
+// del and return first item
 arr.shift();
+
 // add item to the start of the array
 arr.unshift(4);
 
