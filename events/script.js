@@ -19,13 +19,13 @@ let i = 0;
 const doWithElement = (e) => {
     console.log(e.currentTarget);
     console.log(e.type);
-    // e.target.style.backgroundColor = "gold";
-    // i++;
-    // if (i === 1) {
-    //     btn.removeEventListener('click', doWithElement);
-    // }
+    e.target.style.backgroundColor = "gold";
+    i++;
+    if (i === 1) {
+        btn.removeEventListener('click', doWithElement);
+    }
     // e.target.remove();
-    // alert("2");
+    alert("2");
 }
 
 btn.addEventListener('click', doWithElement);

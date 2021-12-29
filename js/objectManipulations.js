@@ -17,8 +17,10 @@ const options = {
 };
 options.makeTest();
 
+// деструктуризация
 const {width, height} = options;
 console.log(width, height)
+// выдаст 1024 1024
 
 delete options.name;
 

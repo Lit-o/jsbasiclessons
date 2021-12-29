@@ -1,15 +1,16 @@
 const btns = document.querySelectorAll('button');
 const wrapper = document.querySelector('.btn-block');
+// btns[0].classList.length вернет количество классов навешанных на итем
 console.log(btns[0].classList.length);
 
 // получим класс под индексом ноль, по сути первый класс
 console.log(btns[0].classList.item(0));
 
-// console.log(btns[0].classList.add('red'));
+// btns[0].classList.add('red');
 
-//  if (btns[1].classList.contains('red')) {
+ if (btns[1].classList.contains('red')) {
 
-//  }
+ }
 
 
 btns[0].addEventListener('click', () => {

@@ -44,9 +44,11 @@ circles[0].remove;
 // приходится искать через родителя, 
 // а .remove() сразу удаляет конкретный элемент
 hearts[1].replaceWith(circles[0]);
+// hearts[1] удаляется, а на его место вырезается со своего и вставляется circles[0]
 // устаревший метод wrapper.replaceChild(circles[0], hearts[1])
 
 
 div.innerHTML = "<h1>Hello !</h1>";
-// div.textContent = "Hello";
+div.textContent = "Hello";
+
 div.insertAdjacentHTML('', '<h2>Yep</h2>');

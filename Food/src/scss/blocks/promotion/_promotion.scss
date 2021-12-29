@@ -1,0 +1,58 @@
+.promotion {
+    padding: 70px 0 240px 0;
+    position: relative;
+    .container {
+        display: flex;
+    }
+    .bgc_y {
+        position: absolute;
+        width: 50%;
+        height: 499px;
+        background: rgba(243, 255, 222, 0.35);
+        z-index: -1;
+        top: -50px;
+        left: 0;
+    }
+    &__text {
+        width: 50%;
+    }
+    &__descr {
+        margin-top: 40px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 300;
+        span {
+            font-weight: bold;
+            font-size: 26px;
+        }
+    }
+    &__timer {
+        width: 50%;
+        .title {
+            text-align: right;
+        }
+        .timer {
+            margin-top: 60px;
+            padding-left: 95px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__block {
+                width: 102px;
+                height: 120px;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+                font-size: 16px;
+                font-weight: 300;
+                text-align: center;
+                span {
+                    display: block;
+                    margin-top: 20px;
+                    margin-bottom: 5px;
+                    font-size: 56px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
