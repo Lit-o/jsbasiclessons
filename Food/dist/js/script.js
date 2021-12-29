@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date());
-        console.log(t)
+        // console.log(t)
         let days = Math.floor(t/(1000 * 60 * 60 * 24));
         let hours = Math.floor(t / (1000 * 60 * 60) % 24);
         let minutes = Math.floor(t / 1000 / 60 % 60);
@@ -94,6 +94,47 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setClock('.timer', deadLine)
     // END END END END END END END END END END END END END END END
+
+    // MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL 
+    const modalBtns = document.querySelectorAll("[data-modal]");
+    const modalWindow = document.querySelector(".modal");
+    const modalClose = document.querySelector("[data-close]");
+
+    const hideModal = () => {
+        modalWindow.classList.remove('show');
+        modalWindow.classList.add('hide');
+        document.body.style.overflow = "";
+    }
+
+    modalBtns.forEach(item => {
+        item.addEventListener('click', () => {
+            modalWindow.classList.add('fade');
+            modalWindow.classList.add('show');
+            modalWindow.classList.remove('hide');
+            // modalWindow.style.display = "block";
+            document.body.style.overflow = "hidden";
+        })
+    });
+    modalClose.addEventListener('click', hideModal)
+    modalWindow.addEventListener('click', (e) => {
+        if (e.target && 
+            e.target.classList.contains('modal') &&
+            !e.target.classList.contains('modal__dialog')) {
+            hideModal();
+        }
+        // alternative solution
+        // if (e.target === modalWindow) {}
+        // будет работать, тк строго совпадать 
+        // должно именно с modalWindow, но не с его потомками
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape" && modalWindow.classList.contains('show')) {
+            hideModal()
+        }
+    })
+
+
 
 
 });
