@@ -22,7 +22,7 @@ console.log(now);
 
 let start = new Date();
 
-for (let i = 0; i < 100000; i++) {
+for (let i = 0; i < 1000000; i++) {
     let some = i ** 2;
 }
 
