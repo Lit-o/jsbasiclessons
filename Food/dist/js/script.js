@@ -40,8 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     // END END END END END END END END END END END END END END END
 
-    // TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER 
-
+    // TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER
     const deadLine = "2022-01-01";
 
     function getTimeRemaining(endtime) {
@@ -58,9 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
             hours: hours,
             minutes: minutes,
             seconds: seconds
-        }     
-        
-
+        }  
     }
 
     function setClock(selector, endtime) {
@@ -96,11 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadLine)
-
-
-
-
-
+    // END END END END END END END END END END END END END END END
 
 
 });
