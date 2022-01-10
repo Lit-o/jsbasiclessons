@@ -20,6 +20,8 @@ const num = 12.3;
 console.log(Math.round(num))
 
 const numFromString = "14.2px";
+// без дроби
 console.log(parseInt(numFromString));
+// с дробью
 console.log(parseFloat(numFromString));
 

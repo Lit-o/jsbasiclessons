@@ -8,6 +8,7 @@ function showHelloDeclarationFunc(text) {
 }
 showHelloDeclarationFunc("Heeey");
 console.log(num);
+console.log(showHelloDeclarationFunc("Heeey"));
 
 
 function calc(x) {
@@ -21,6 +22,7 @@ function ret() {
     return num;
 }
 const anotherNum = ret();
+console.log(anotherNum);
 
 
 const expressionFunc = function () {

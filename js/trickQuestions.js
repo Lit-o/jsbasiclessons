@@ -7,6 +7,7 @@ console.log(v++);
 
 // [] + false - null + true
 console.log([] + false)
+// Пустой массив в таких операциях приводится к пустой строке
 // returned false but string type Пустой массив в таких операциях приводится к пустой строке
 console.log([] + false - null) 
 // NaN - String не может вычитаться 
