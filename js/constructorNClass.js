@@ -44,5 +44,6 @@ class ColoredRectangleWithText extends Rectangle {
 
 const square = new Rectangle(10, 10);
 const long = new Rectangle(100, 10);
-
+const div = new ColoredRectangleWithText(10, 10, 'Hello buddy', 'red')
+div.showMyProps()
 console.log(square.calcArea())

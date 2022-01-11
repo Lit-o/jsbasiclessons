@@ -64,7 +64,7 @@ btn.addEventListener('click', function(){
 // но в современных реалиях юзают трелочную и e.target
 btn.addEventListener('click', (e) => {
     e.target.style.backgroundColor = 'red';
-})
+});
 
 
 const objArr = {

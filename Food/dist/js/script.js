@@ -40,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     // END END END END END END END END END END END END END END END
 
+
     // TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER TIMER
     const deadLine = "2022-01-01";
 
@@ -95,6 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setClock('.timer', deadLine)
     // END END END END END END END END END END END END END END END
 
+
     // MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL 
     const modalBtns = document.querySelectorAll("[data-modal]");
     const modalWindow = document.querySelector(".modal");
@@ -138,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // madal shown after 5 sec
-    const modalTimerId = setTimeout(showModal, 5000);
+    // const modalTimerId = setTimeout(showModal, 5000);
 
     const showModalByScroll = () => {
         // window.pageYOffset - сколько уже открутили
@@ -147,15 +149,78 @@ window.addEventListener('DOMContentLoaded', () => {
         // -1 пиксель в конце для кроссбраузерности, тк иногда не срабатывает
         // в итоге условие отслеживает, что клиент доскролил до конца сайта
         // чтобы сработало один раз, в функции потом отменяем слушателя с removeEventListener
-        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight -1) {
+        if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
             showModal();
             window.removeEventListener('scroll', showModalByScroll)
         }
     }
 
     window.addEventListener('scroll', showModalByScroll);
+    // END END END END END END END END END END END END END END END
 
 
+    // CLASS CARD CLASS CARD CLASS CARD CLASS CARD CLASS CARD CLASS
+    class MenuCard {
+        constructor(src, alt, title, descr, price, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.parent = document.querySelector(parentSelector)
+            this.current = 74;
+            this.changeCurrent();
+        }
 
+        changeCurrent() {
+            this.price = this.price * this.current;
+        }
+
+        render() {
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div class="menu__item">
+                    <img src=${this.src} alt=${this.alt}>
+                    <h3 class="menu__item-subtitle">${this.title}</h3>
+                    <div class="menu__item-descr">${this.descr}</div>
+                    <div class="menu__item-divider"></div>
+                    <div class="menu__item-price">
+                        <div class="menu__item-cost">Цена:</div>
+                        <div class="menu__item-total"><span>${this.price}</span> руб/день</div>
+                    </div>
+                </div>
+            `;
+            this.parent.append(element);
+        }
+    }
+
+    // const div = new MenuCard();
+    // div.render() это стандартный вызов, то, что ниже используется, когда надо вызвать один раз
+    new MenuCard(
+        "img/tabs/vegy.jpg",
+        "vegy",
+        'Меню "Фитнес"',
+        'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+        10,
+        '.menu .container'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/elite.jpg",
+        "elite",
+        'Меню “Премиум”',
+        'Меню "Премиум" - это старый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+        22,
+        '.menu .container'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/post.jpg",
+        "post",
+        'Меню "Постное"',
+        'Меню "Постное" - это Постный подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+        5,
+        '.menu .container'
+    ).render();
 
 });
