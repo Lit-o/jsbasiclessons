@@ -146,6 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // document.documentElement.scrollHeight - вся длинна документа
         // -1 пиксель в конце для кроссбраузерности, тк иногда не срабатывает
         // в итоге условие отслеживает, что клиент доскролил до конца сайта
+        // чтобы сработало один раз, в функции потом отменяем слушателя с removeEventListener
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight -1) {
             showModal();
             window.removeEventListener('scroll', showModalByScroll)
