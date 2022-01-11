@@ -35,7 +35,7 @@ btn.addEventListener('click', myAnimation, {once: true})
 // })
 
 // рекурсивный setTimeout, как альтернатива setInterval
-let id = setTimeout(function log(){
+let id = setTimeout(function logger(){
     console.log("I'm func");
-    id = setTimeout(log, 500)
+    id = setTimeout(logger, 500)
 }, 500)
