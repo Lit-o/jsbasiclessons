@@ -15,4 +15,6 @@ console.log(JSON.parse(JSON.stringify(persone)));
 // можно делать глубокую копию с помощью JSON
 const clone = JSON.parse(JSON.stringify(persone));
 
+const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
 

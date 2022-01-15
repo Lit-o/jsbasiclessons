@@ -22,6 +22,16 @@ const {width, height} = options;
 console.log(width, height)
 // выдаст 1024 1024
 
+const data = [
+    {x: 3, y:3}, 
+    {x: 4, y:4}, 
+    {x: 5, y:5}
+];            //тут классический elem или item деструктуризируется в {x, y}
+data.forEach(({x, y}, i) => {
+    console.log(`Элемент под номером ${i+1} имеет координаты x:${x} y:${y}`)
+})
+
+
 delete options.name;
 
 let counter = 0

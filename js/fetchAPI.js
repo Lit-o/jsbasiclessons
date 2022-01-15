@@ -7,7 +7,7 @@
 // У fetch есть встроенный метод .json() превратит json в js-object
 // У fetch есть встроенный метод .text() превратит json в text
 
-fetch('https://jsonplaceholder.typicode.com/posts', {
+const resrs = fetch('https://jsonplaceholder.typicode.com/posts', {
     method: "POST",
     body: JSON.stringify({name: 'Aloha'}),
     headers: {
