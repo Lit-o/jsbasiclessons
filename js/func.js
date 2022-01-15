@@ -10,7 +10,7 @@ showHelloDeclarationFunc("Heeey");
 console.log(num);
 console.log(showHelloDeclarationFunc("Heeey"));
 
-
+const LEL = () => {};
 function calc(x) {
     return (x*x);
 }
