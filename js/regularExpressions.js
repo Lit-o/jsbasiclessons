@@ -29,6 +29,7 @@ console.log(pass.replace(/\./g, '*'));
 // /./g - берем всю строку, . - это взять всю строку, 
 // если взять нужно именно точку, то в шаблоне нужно экранировать ее обратным слешем \.
 console.log('12-02-2222'.replace(/-/g, ':'));
+console.log('12-02-2222'.replace(/-/g, '')); // удаляем
 
 
 const ans3 = 'AnnUT';
@@ -41,9 +42,26 @@ console.log(reg3.test(ans3));
 // \w - ищем все буквы
 // \s - ищем все пробелы (пробелы можно искать просто поставив пробел / /)
 
-const ans4 = 'AnnUT3';
+const ans4 = '200px';
 const reg4 = /\d/ig;
-console.log(reg4.match(ans4));
+console.log(ans4.match(reg4).reduce((s,c) => s +'-'+ c));
+
+
+const starWars = 'My name is R2D2';
+console.log(starWars.match(/\w\d\w\d/i));
+console.log(starWars.match(/\d/ig));
+console.log(starWars.match(/\W/ig));
+console.log(starWars.match(/\D/ig));
+// Синтаксис НЕ передается большой буквой W - Это найти все НЕ буквы и тп, 
+// все цифры в этом режиме тоже видит как буквы
+
+
+const test = '200px'
+console.log(test.replace(/\D/g, ''));
+// удаляем все буквы, оставим только 200
+
+
+
 
 
 
