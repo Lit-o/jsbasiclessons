@@ -57,8 +57,8 @@ console.log(starWars.match(/\D/ig));
 
 
 const test = '200px'
-console.log(test.replace(/\D/g, ''));
-// удаляем все буквы, оставим только 200
+console.log(+test.replace(/\D/g, ''));
+// удаляем все буквы, оставим только 200 причем Number
 
 
 
