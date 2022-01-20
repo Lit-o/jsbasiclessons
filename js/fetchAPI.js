@@ -7,7 +7,7 @@
 // У fetch есть встроенный метод .json() превратит json в js-object
 // У fetch есть встроенный метод .text() превратит json в text
 
-const resrs = fetch('https://jsonplaceholder.typicode.com/posts', {
+fetch('https://jsonplaceholder.typicode.com/posts', {
     method: "POST",
     body: JSON.stringify({name: 'Aloha'}),
     headers: {
@@ -16,6 +16,12 @@ const resrs = fetch('https://jsonplaceholder.typicode.com/posts', {
 })
 .then(response => response.json())
 .then(json => console.log(json));
+
+
+// у fetch есть свойство .ok
+if (fetch(url).ok) {
+    throw new Error('Error');
+}
 
 
 const json = JSON.stringify(Object.fromEntries(formData.entries()));

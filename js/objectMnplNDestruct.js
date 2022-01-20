@@ -27,21 +27,18 @@ const data = [
     {x: 4, y:4}, 
     {x: 5, y:5}
 ];            //тут классический elem или item деструктуризируется в {x, y}
-
-
-const testo =  data[1]
-
-const loggy = () => {
-    console.log(x + 'This is X');
-    console.log(y + 'This is Y')
-}
 data.forEach(({x, y}, i) => {
     console.log(`Элемент под номером ${i+1} имеет координаты x:${x} y:${y}`)
 })
 
-data.forEach((...elem, i) => {
-    console.log(`Элемент под номером ${i+1} имеет координаты x:${x} y:${y}`)
-})
+const testo =  data[1]
+                // вот еще одна диструктуризация объекта testo
+const loggy = ({x, y}) => {
+    console.log(x + 'This is X');
+    console.log(y + 'This is Y')
+}
+loggy(testo);
+
 
 delete options.name;
 
