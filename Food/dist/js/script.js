@@ -295,15 +295,28 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: "POST",
-        body: JSON.stringify({name: 'Aloha'}),
-        headers: {
-            'Content-type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(json => console.log(json));
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: "POST",
+    //     body: JSON.stringify({name: 'Aloha'}),
+    //     headers: {
+    //         'Content-type': 'application/json'
+    //     }
+    // })
+    // .then(response => response.json())
+    // .then(json => console.log(json));
+
+    const tryAsAwRequest = async () => {
+        let res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: "POST",
+            body: JSON.stringify({name: 'Aloha'}),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+        const consoled = await res.json();
+        console.log(consoled);
+    }
+    tryAsAwRequest();
 // const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
 });
