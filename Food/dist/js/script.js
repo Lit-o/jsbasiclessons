@@ -305,18 +305,32 @@ window.addEventListener('DOMContentLoaded', () => {
     // .then(response => response.json())
     // .then(json => console.log(json));
 
-    const tryAsAwRequest = async () => {
+    const tryAsyncAwaitRequest = async () => {
         let res = await fetch('https://jsonplaceholder.typicode.com/posts', {
             method: "POST",
-            body: JSON.stringify({name: 'Aloha'}),
+            body: JSON.stringify({name: 'Shony'}),
             headers: {
                 'Content-type': 'application/json'
             }
         });
+        // await 
         const consoled = await res.json();
-        console.log(consoled);
+
+        const hold = new Promise((resolve, reject) => {
+            const timerOK = setTimeout(() => {
+                console.log('Подготовка данных...');        
+                const product = ' Hold on, buddy'        
+                resolve(product)
+            }, 3000);
+        })
+
+        // await hold
+        const finallyHold = await hold.then(data => {return data});
+        
+        console.log(consoled.name + finallyHold);
     }
-    tryAsAwRequest();
+    tryAsyncAwaitRequest();
+
 // const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
 });
