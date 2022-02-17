@@ -47,3 +47,13 @@ numArr.sort((a, b) => a - b)
 console.log(numArr)
 
 
+function digitize(n) {
+    (''+n).split('').reverse()
+  }
+
+let numb = 345678;
+let test = numb + ''
+let newNumb = String(numb).split('')
+console.log(newNumb)
+
+
