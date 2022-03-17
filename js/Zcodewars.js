@@ -17,19 +17,22 @@ for (let j = 0; j <= i; j++) {
 console.log([])
 
 
-
+// my solution
 accum = s => {
-  return [...s].map((el, i) => {
+  return [...s.toLowerCase()].map((el, i) => {
     const arr = []
-    // arr[i] = el
-    for (let j = 0; j <= i; ++j) {
+    for (let j = 0; j <= i; j++) {
       arr[j]=el 
     }
-    
-    return arr
+    arr[0] = arr[0].toUpperCase()
+    return arr.join('')
   }).join('-')
 }
-console.log(accum('dsfyt'))
+console.log(accum('dSfYtZY'))
+// best practice
+function accum(s) {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}
 
 
 

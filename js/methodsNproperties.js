@@ -7,8 +7,9 @@ console.log(str[2]);
 console.log(str.toUpperCase());
 console.log(str.toLowerCase());
 
-const fullName = "Ivan Ivanchov Braga";
+const fullName = "Ivan Ivaqnchov Braqga";
 console.log(fullName.indexOf("q"));
+console.log(fullName.includes('q'));
 
 const logg = "Yep yep dude";
 console.log(logg.slice(-4,-1));
