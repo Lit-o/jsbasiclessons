@@ -4,10 +4,9 @@ const digitize = n => ('' + n).split('').reverse().map(e => +e)
 // Someone good practice
 digitize = n => [...String(n)].map(Number).reverse()
 
+
 // task2
 const friend = friends => friends.filter(el => el.length === 4);
-
-
 
 for (let j = 0; j <= i; j++) {
   const arr = []
@@ -15,7 +14,6 @@ for (let j = 0; j <= i; j++) {
   else (arr.j = el)
 }
 console.log([])
-
 
 // my solution
 accum = s => {
@@ -33,6 +31,43 @@ console.log(accum('dSfYtZY'))
 function accum(s) {
   return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
 }
+
+
+// -----------------------------------------------------------------------------------------------
+
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+
+// my solution
+function getCount(str) {
+  var vowelsCount = 0;
+  var arr = str.split('');
+  return vowelsCount = arr.filter(l => l === 'a' || l === 'e' || l === 'i' || l === 'o' || l === 'u').length;
+}
+console.log(getCount('aabracedabra'));
+
+
+// best solution
+function getCount(str) {
+  return (str.match(/[aeiou]/ig) || []).length;
+}
+
+function getCount(str) {
+  return str.replace(/[^aeiou]/gi, '').length;
+}
+
+function getCount(str) {
+  return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
+ }
+
+
+
+
+
+
+
+
 
 
 
