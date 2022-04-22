@@ -60,9 +60,17 @@ function getCount(str) {
 function getCount(str) {
   return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
  }
+// ------------------------------------------------------------------------
 
 
+function litres(time) {  
+  return Math.floor(time * 0.5);
+}
 
+// Math.round() - rounds to the nearest integer.
+// Math.floor() - rounds down towards negative infinity.
+// Math.ceil() - rounds up towards positive infinity.
+// parseInt()
 
 
 
