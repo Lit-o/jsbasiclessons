@@ -71,9 +71,35 @@ function litres(time) {
 // Math.floor() - rounds down towards negative infinity.
 // Math.ceil() - rounds up towards positive infinity.
 // parseInt()
+// ------------------------------------------------------------------------
 
 
 
+function removeSmallest(numbers) {
+  let min = numbers[0];
+  let minIndex = 0
+  for (let i = 1; i < numbers.length; i++ ) {
+    if (numbers[i] < min) {
+      min = numbers[i]
+      minIndex = i
+    }
+  }
+  numbers.splice(minIndex, 1)
+  return numbers
+}
+// removeSmallest([4,5,2,1,2,1])
+console.log(removeSmallest([4,-1,5,2,1,2,1]))
+
+// let arra = [1,2,3,4,5]
+// // arra.splice(0,2)
+// let r = arra.splice(0,2)
+// console.log(arra)
+// console.log(r)
+function removeSmallest(numbers) {
+  let indexOfMin = numbers.indexOf(Math.min(...numbers));
+  return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+}
+const removeSmallest = numbers => numbers.filter((n,i) => i !== numbers.indexOf(Math.min(...numbers)));
 
 
 
