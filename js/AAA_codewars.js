@@ -100,6 +100,19 @@ function removeSmallest(numbers) {
   return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
 }
 const removeSmallest = numbers => numbers.filter((n,i) => i !== numbers.indexOf(Math.min(...numbers)));
+// ------------------------------------------------------------------------
+
+
+
+
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+// Array can contain numbers or strings. X can be either.
+// Return true if the array contains the value, false if not.
+const check = (a, x) => a.some(el => el === x)
+// other solution
+const check2 = (a,x) => a.includes(x);
+// ------------------------------------------------------------------------
+
 
 
 
