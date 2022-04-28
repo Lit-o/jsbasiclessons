@@ -31,14 +31,13 @@ console.log(accum('dSfYtZY'))
 function accum(s) {
   return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
 }
-
-
 // -----------------------------------------------------------------------------------------------
+
+
 
 // Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
-
 // my solution
 function getCount(str) {
   var vowelsCount = 0;
@@ -46,8 +45,6 @@ function getCount(str) {
   return vowelsCount = arr.filter(l => l === 'a' || l === 'e' || l === 'i' || l === 'o' || l === 'u').length;
 }
 console.log(getCount('aabracedabra'));
-
-
 // best solution
 function getCount(str) {
   return (str.match(/[aeiou]/ig) || []).length;
@@ -61,6 +58,7 @@ function getCount(str) {
   return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
  }
 // ------------------------------------------------------------------------
+
 
 
 function litres(time) {  
@@ -104,7 +102,6 @@ const removeSmallest = numbers => numbers.filter((n,i) => i !== numbers.indexOf(
 
 
 
-
 // You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
 // Array can contain numbers or strings. X can be either.
 // Return true if the array contains the value, false if not.
@@ -113,6 +110,14 @@ const check = (a, x) => a.some(el => el === x)
 const check2 = (a,x) => a.includes(x);
 // ------------------------------------------------------------------------
 
+
+
+// Consider an array/list of sheep where some sheep may be missing from their place. 
+// We need a function that counts the number of sheep present in the array (true means present).
+const countSheeps = arrayOfSheep => arrayOfSheep.filter(el => el === true).length
+// other solution
+let countSheeps2 = x => x.filter( s => s ).length;
+// ------------------------------------------------------------------------
 
 
 
