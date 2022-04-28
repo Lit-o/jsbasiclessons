@@ -115,10 +115,31 @@ const check2 = (a,x) => a.includes(x);
 // Consider an array/list of sheep where some sheep may be missing from their place. 
 // We need a function that counts the number of sheep present in the array (true means present).
 const countSheeps = arrayOfSheep => arrayOfSheep.filter(el => el === true).length
-// other solution
 let countSheeps2 = x => x.filter( s => s ).length;
 // ------------------------------------------------------------------------
 
+
+
+// Write a program that finds the summation of every 
+// number from 1 to num. The number will always be a positive integer greater than 0.
+const summation = num => {
+  let sum = 1
+  if (num > 1) {
+    for(let i = 2; i <= num; i++) {
+      sum+=i
+    }    
+  }
+  return sum
+}
+// other solution
+var summation2 = function (num) {
+  let result = 0;
+  for (var i = 1; i <= num; i++) {
+    result += i;
+  }  
+  return result;
+}
+// ------------------------------------------------------------------------
 
 
 
