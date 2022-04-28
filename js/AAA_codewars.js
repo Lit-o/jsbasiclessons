@@ -139,6 +139,10 @@ var summation2 = function (num) {
   }  
   return result;
 }
+
+function summation3(num) {
+  return num * (num + 1) / 2
+}
 // ------------------------------------------------------------------------
 
 
