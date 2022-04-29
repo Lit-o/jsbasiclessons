@@ -146,6 +146,58 @@ function summation3(num) {
 // ------------------------------------------------------------------------
 
 
+// Your task is to create a function that does four basic mathematical operations.
+const basicOp = (operation, a, b) => {
+  switch (operation) {
+      case '+':
+        return a + b
+      case '-':
+        return a - b
+      case '*':
+        return a * b
+      case '/':
+        return a / b
+      default:
+        return null;
+  }
+}
+console.log(basicOp("+", 4, 12))
+// other solution
+function basicOp2(o, a, b) {
+  return eval(a+o+b);
+}
 
+function basicOp3(operation, value1, value2)
+{
+  var cases = {
+    '+': value1 + value2,
+    '-': value1 - value2,
+    '*': value1 * value2,
+    '/': value1 / value2
+  };
+  return cases[operation]
+}
+
+function basicOp3(operation, value1, value2) {
+  return  operation == '+' ? value1 + value2 :
+          operation == '-' ? value1 - value2 :
+          operation == '*' ? value1 * value2 :
+          operation == '/' ? value1 / value2 : 'Wrong Operation';
+}
+// ------------------------------------------------------------------------
+
+
+
+// Your task is to make two functions (max and min, or maximum and minimum, etc., depending on the language) 
+// that receive a list of integers as input and return, respectively, the largest and lowest number in that list.
+const min = list => list.sort((a, b) => b - a)[list.length - 1]
+const max = list => list.sort((a, b) => a - b)[list.length - 1]
+
+const max1 = list => list.sort((a, b) => b - a)[0]
+const min1 = list => list.sort((a, b) => a - b)[0]
+// other solution
+const min2= (list) => Math.min(...list);
+const max2 = (list) => Math.max(...list);
+// ------------------------------------------------------------------------
 
 
