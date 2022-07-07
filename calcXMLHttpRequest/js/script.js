@@ -11,6 +11,12 @@ inputRub.addEventListener('input', () => {
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     request.send();
 
+    // список HTTP ответа в request
+    // .status 200, 404, etc
+    // .statusText  Error, OK, etc
+    // .response some Data from server 
+    // .readyState 1, 2, 3, 4
+
     // request.addEventListener('readystatechange', () => {
     //     if (request.readyState === 4 && request.status === 200) {
     //         console.log(request.response);
@@ -30,10 +36,4 @@ inputRub.addEventListener('input', () => {
             inputUsd.value = "Something wrong"
         }
     })
-
-    // список кодов состояния HTTP
-    // status
-    // statusText
-    // response
-    // readyState
 })
