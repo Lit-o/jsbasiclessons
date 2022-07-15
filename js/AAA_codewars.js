@@ -223,7 +223,7 @@ function getMiddleOther(s)
 
 
 
-//Complete the function that accepts a string parameter, and reverses each word in the string. 
+// Complete the function that accepts a string parameter, and reverses each word in the string. 
 // All spaces in the string should be retained.
 // My first solution
 const reverseWordsFirst = str => {
@@ -238,6 +238,15 @@ const reverseWords = str => str.split(' ').map(w => w.split('').reverse().join('
 // Other intresting solution
 var reverseWordsOther=s=>s.replace(/\S+/g,v=>[...v].reverse().join``)
 // ------------------------------------------------------------------------
+
+
+
+// Very simple, given an integer or a floating-point number, find its opposite. 
+// My first and best for this moment solution
+const opposite = n => (('' + n)[0] === "-") ? +('' + n).slice(1) : +('-' + n)
+
+// Truly other best solution 
+const oppositeOther = n => -n;
 
 
 
