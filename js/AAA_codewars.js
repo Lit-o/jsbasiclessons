@@ -201,3 +201,43 @@ const max2 = (list) => Math.max(...list);
 // ------------------------------------------------------------------------
 
 
+
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's
+// length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+// My first solution
+const getMiddleFirst = s => {
+  if (s.length % 2 === 0) {
+    return s.slice(s.length/2-1, s.length/2+1)
+  } else {
+    return s.slice(s.length/2, s.length/2+1)
+  }
+}
+// My best for this moment solution
+const getMiddle = s => (s.length % 2 === 0) ? s.slice(s.length/2-1, s.length/2+1) : s.slice(s.length/2, s.length/2+1)
+// Other intresting solution
+function getMiddleOther(s)
+{
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
+// ------------------------------------------------------------------------
+
+
+
+//Complete the function that accepts a string parameter, and reverses each word in the string. 
+// All spaces in the string should be retained.
+// My first solution
+const reverseWordsFirst = str => {
+  const words = str.split(' ')
+  const mirror = words.map(word => {
+    return word.split('').reverse().join('')
+  })
+  return mirror.join(' ')
+}
+// My best for this moment solution
+const reverseWords = str => str.split(' ').map(w => w.split('').reverse().join('')).join(' ')
+// Other intresting solution
+var reverseWordsOther=s=>s.replace(/\S+/g,v=>[...v].reverse().join``)
+// ------------------------------------------------------------------------
+
+
+
