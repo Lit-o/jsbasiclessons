@@ -247,6 +247,39 @@ const opposite = n => (('' + n)[0] === "-") ? +('' + n).slice(1) : +('-' + n)
 
 // Truly other best solution 
 const oppositeOther = n => -n;
+// ------------------------------------------------------------------------
 
 
 
+// Return an array, where the first element is the count of positives numbers and the 
+// second element is sum of negative numbers. 0 is neither positive nor negative.
+// If the input is an empty array or is null, return an empty array.
+// My first solution
+const countPositivesSumNegatives = a => {
+  if (a === null) {return []}
+  let sumN = 0, countP = 0;
+  a.forEach(i => {
+    if (i < 0) {
+      sumN += i 
+    } else if (i > 0) {
+      countP += 1
+    }
+  })
+  if (sumN === 0 && countP === 0) {return []}
+  return [countP, sumN]
+}
+// Good other solution
+function countPositivesSumNegatives(input) {
+  if (input == null || input.length == 0)
+    return [];  
+  var positive = 0;
+  var negative = 0;  
+  for (var i=0, l=input.length; i<l; ++i)
+  {
+    if (input[i] > 0)
+      ++ positive;
+    else
+      negative += input[i];
+  }  
+  return [positive, negative];
+}
