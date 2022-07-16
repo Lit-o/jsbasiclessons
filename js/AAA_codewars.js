@@ -263,13 +263,14 @@ const countPositivesSumNegatives = a => {
       sumN += i 
     } else if (i > 0) {
       countP += 1
+      // countP++
     }
   })
   if (sumN === 0 && countP === 0) {return []}
   return [countP, sumN]
 }
-// Good other solution
-function countPositivesSumNegatives(input) {
+// Good other solutions
+function countPositivesSumNegatives2(input) {
   if (input == null || input.length == 0)
     return [];  
   var positive = 0;
@@ -282,4 +283,7 @@ function countPositivesSumNegatives(input) {
       negative += input[i];
   }  
   return [positive, negative];
+}
+function countPositivesSumNegatives3(input) {
+  return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
 }
