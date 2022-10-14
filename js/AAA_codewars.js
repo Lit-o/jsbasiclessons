@@ -287,3 +287,40 @@ function countPositivesSumNegatives2(input) {
 function countPositivesSumNegatives3(input) {
   return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
 }
+
+// --------------------------------------------------------------------------------------------------------------------
+// scope practice
+let scopeTest = 1;
+
+function scopeTestFunc () {
+  let scopeTest = 0;
+  scopeTest = scopeTest + 1
+  console.log(scopeTest)
+}
+
+scopeTestFunc()
+scopeTestFunc()
+scopeTestFunc()
+
+//  CLOSURE PRACTICE --- CLOSURE PRACTICE --- CLOSURE PRACTICE --- CLOSURE PRACTICE
+function scopeTestClosureFunc () {
+  let scopeTest = 0;
+  let scopeTestInnerFunc = () => {
+    let x = 10
+    x = x + 1
+    console.log(x)
+    scopeTest += 1
+    return scopeTest
+  }
+  return scopeTestInnerFunc
+}
+
+let ChildFuncWithClosure = scopeTestClosureFunc() 
+// ChildFuncWithClosure - link, hub which make Closure state save
+// scopeTestClosureFunc()() - just run, give another func which again run and after that scope clear
+
+console.log(ChildFuncWithClosure()) //run, parent fantom scope (scopeTest) update and save, local state (x) clear
+console.log(ChildFuncWithClosure()) //run, parent fantom scope (scopeTest) update and save, local state (x) clear
+console.log(ChildFuncWithClosure()) //run, parent fantom scope (scopeTest) update and save, local state (x) clear
+console.log(scopeTestClosureFunc()()) // run, return func, which run and return 1, clear scope
+console.log(scopeTestClosureFunc()()) // run, return func, which run and return 1, clear scope
