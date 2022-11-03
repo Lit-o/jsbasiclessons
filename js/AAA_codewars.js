@@ -324,3 +324,21 @@ console.log(ChildFuncWithClosure()) //run, parent fantom scope (scopeTest) updat
 console.log(ChildFuncWithClosure()) //run, parent fantom scope (scopeTest) update and save, local state (x) clear
 console.log(scopeTestClosureFunc()()) // run, return func, which run and return 1, clear scope
 console.log(scopeTestClosureFunc()()) // run, return func, which run and return 1, clear scope
+// --------------------------------------------------------------------------------------------------------------------
+
+
+// Create a function which answers the question "Are you playing banjo?".
+// If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+// my solution
+const Banjo = (name) => {
+  return (name[0] === 'R' || name[0] === 'r') ? `${name} plays banjo` : `${name} does not play banjo`
+}
+const Banjo2 = name => (name[0] === 'R' || name[0] === 'r') ? `${name} plays banjo` : `${name} does not play banjo`
+console.log(Banjo2('Roman'))
+
+// other best solution
+function areYouPlayingBanjo(name) {
+  return name[0].toLowerCase() == "r" ? name + " plays banjo" : name + " does not play banjo";
+}
+// --------------------------------------------------------------------------------------------------------------------
