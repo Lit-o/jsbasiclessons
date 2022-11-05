@@ -352,7 +352,7 @@ const isIsogramFirstVer = word => {
   const localArr = [...wordToArr]
   let isIsogram = true
 
-  for (let i = 0; i < wordToArr.length; i++) {    
+  for (let i = 0; i < wordToArr.length - 1; i++) {    
     const current = localArr[0]
     localArr.splice(0, 1)  
     // const match = localArr.some(el => current === el)
@@ -369,3 +369,23 @@ const isIsogramFirstVer = word => {
 }
 
 console.log(isIsogramFirstVer('123454'))
+
+
+const isIsogram = word => {
+  const wordToArr = word.toLowerCase().split('');
+  const length = wordToArr.length
+
+  let isIsogram = true
+
+  for (let i = 0; i < length - 1; i++) {    
+    const current = wordToArr[0]
+    wordToArr.splice(0, 1)  
+    if (wordToArr.some(el => current === el)) {
+      isIsogram = false
+    }
+  }
+
+  return isIsogram 
+}
+
+console.log(isIsogram('123455'))
