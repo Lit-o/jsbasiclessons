@@ -342,3 +342,30 @@ function areYouPlayingBanjo(name) {
   return name[0].toLowerCase() == "r" ? name + " plays banjo" : name + " does not play banjo";
 }
 // --------------------------------------------------------------------------------------------------------------------
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+// Implement a function that determines whether a string that contains only letters is an isogram. 
+// Assume the empty string is an isogram. Ignore letter case.
+
+const isIsogramFirstVer = word => {
+  const wordToArr = word.toLowerCase().split('');
+  const localArr = [...wordToArr]
+  let isIsogram = true
+
+  for (let i = 0; i < wordToArr.length; i++) {    
+    const current = localArr[0]
+    localArr.splice(0, 1)  
+    // const match = localArr.some(el => current === el)
+    if (localArr.some(el => current === el)) {
+      isIsogram = false
+    }
+    console.log(current) 
+    console.log(localArr)
+    console.log(isIsogram)   
+    console.log('----------')  
+  }
+
+  return isIsogram 
+}
+
+console.log(isIsogramFirstVer('123454'))
