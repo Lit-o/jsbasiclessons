@@ -419,3 +419,6 @@ console.log(findNeedle(['3', '123124234', undefined, 'needles', 'world', 'hay', 
 // The numbering starts at 1. The format is n: string. Notice the colon and space in between.
 const number = arr => arr.map((el,i) => `${i+1}: ${el}`)
 console.log(number([]))
+
+// --------------------------------------------------------------------------------------------------------------------
+const stringToArray = string => string.split(' ');
