@@ -449,3 +449,12 @@ const updateLight = current => ({
   red: 'green',
 })[current]
 
+
+// --------------------------------------------------------------------------------------------------------------------
+// Take an array and remove every second element from the array.
+//  Always keep the first element and start removing with the next element.
+const removeEveryOther = arr => arr.filter((el, i) => i % 2 === 0)
+
+// other solution in different style
+const removeEveryOther2 = arr => arr.filter((_, i) => !(i % 2));
+
