@@ -458,3 +458,11 @@ const removeEveryOther = arr => arr.filter((el, i) => i % 2 === 0)
 // other solution in different style
 const removeEveryOther2 = arr => arr.filter((_, i) => !(i % 2));
 
+
+// --------------------------------------------------------------------------------------------------------------------
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+const removeExclamationMarks = s => s.split('').filter(el => el !== '!').join('')
+
+// other solutions
+const removeExclamationMarks2 = s => s.replace(/!/g,"") 
+const removeExclamationMarks3 = s => s.split('!').join('');
