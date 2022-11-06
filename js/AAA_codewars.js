@@ -411,7 +411,11 @@ function isIsogram4(str){
 // After your function finds the needle it should return a message (as a string) that says:
 // "found the needle at position " plus the index it found the needle
 const findNeedle = haystack => 'found the needle at position ' + haystack.indexOf('needle')
-
 console.log(findNeedle(['3', '123124234', undefined, 'needles', 'world', 'hay', 2, '3', true, false]))
 
 
+// --------------------------------------------------------------------------------------------------------------------
+// Write a function which takes a list of strings and returns each line prepended by the correct number.
+// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+const number = arr => arr.map((el,i) => `${i+1}: ${el}`)
+console.log(number([]))
