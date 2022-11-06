@@ -422,3 +422,30 @@ console.log(number([]))
 
 // --------------------------------------------------------------------------------------------------------------------
 const stringToArray = string => string.split(' ');
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// You're writing code to control your town's traffic lights. You need a 
+// function to handle each change from green, to yellow, to red, and then to green again.
+const updateLight = current => {
+  switch (current){
+    case 'green':
+      return 'yellow';
+    case 'yellow':
+      return 'red';
+    case 'red':
+      return 'green';
+  }
+}
+
+// other good solutions
+function updateLight(current) {  
+  return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
+}
+
+const updateLight = current => ({
+  green: 'yellow',
+  yellow: 'red',
+  red: 'green',
+})[current]
+
