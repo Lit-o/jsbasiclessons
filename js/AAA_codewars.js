@@ -389,3 +389,29 @@ const isIsogram = word => {
 }
 
 console.log(isIsogram('123455'))
+
+// other vest solution
+function isIsogram2(str) {
+  return !str || str.toLowerCase().split('').every(function(v, i, arr) {return arr.indexOf(v) == i;});
+}
+
+function isIsogram3(str){
+  return new Set(str.toUpperCase()).size == str.length;
+}
+
+function isIsogram4(str){ 
+  return !/(\w).*\1/i.test(str)
+} 
+// In case you put one whitespace in the string, since the capture group (\w) only accepts an alphanumeric character, it returns false. a better approach would be to use (.) for any character instead of (\w).
+// --------------------------------------------------------------------------------------------------------------------
+
+
+// Can you find the needle in the haystack?
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+// After your function finds the needle it should return a message (as a string) that says:
+// "found the needle at position " plus the index it found the needle
+const findNeedle = haystack => 'found the needle at position ' + haystack.indexOf('needle')
+
+console.log(findNeedle(['3', '123124234', undefined, 'needles', 'world', 'hay', 2, '3', true, false]))
+
+
