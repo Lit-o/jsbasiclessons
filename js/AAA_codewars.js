@@ -503,3 +503,11 @@ console.log(firstNonConsecutive([1,2,3,4,6,7,8,8,9,10,11,15,16,17]))
 // You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
 // If it is a square, return its area. If it is a rectangle, return its perimeter.
 const areaOrPerimeter = (l , w) =>  l === w ? (l * w) : 2 * (l + w)
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+const quarterOf = month => month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : month <= 12 ? 4 : null
+
+// other solution
+const quarterOf2 = m => Math.ceil(m/3);
