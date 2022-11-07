@@ -466,3 +466,33 @@ const removeExclamationMarks = s => s.split('').filter(el => el !== '!').join(''
 // other solutions
 const removeExclamationMarks2 = s => s.replace(/!/g,"") 
 const removeExclamationMarks3 = s => s.split('!').join('');
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Your task is to find the first element of an array that is not consecutive.
+// E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, 
+// so that's the first non-consecutive number.
+
+// my first solution
+
+const firstNonConsecutive = arr => {  
+  let notConsecutive = null;
+
+
+  arr.forEach((el,i) => {
+
+    if ((el + 1) === arr[i + 1]) {
+      console.log('eeee')
+      notConsecutive = arr[i + 1]
+    }
+
+    // if (el + 1 !== arr[i + 1]){
+    //   // console.log(el)
+    //   // console.log(arr[i + 1])
+    //   return notConsecutive = arr[i + 1]
+    // }
+  })
+
+  return notConsecutive
+}
+console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
