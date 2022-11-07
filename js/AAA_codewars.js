@@ -521,8 +521,14 @@ const countBy = (x, n) => {
     }  
   return z
 }
-
 // other solution
 const countBy2 = (x, n) => Array.from({length: n}, (v, k) => (k + 1) * x)
-
 console.log(countBy(5,6))
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total.
+// Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+const rentalCarCost = d => d < 3 ? (40*d) : d < 7 ? (40*d - 20) : (40*d - 50)
+
+
