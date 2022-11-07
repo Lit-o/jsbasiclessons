@@ -532,3 +532,20 @@ console.log(countBy(5,6))
 const rentalCarCost = d => d < 3 ? (40*d) : d < 7 ? (40*d - 20) : (40*d - 50)
 
 
+// --------------------------------------------------------------------------------------------------------------------
+// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+const doubleChar = s => {
+  const arr = s.split('')
+  let newArr = []
+  arr.forEach(el => {
+    newArr.push(el)
+    newArr.push(el)
+  })
+  return newArr.join('')
+} 
+
+// other solution
+const doubleChar2 = (str) => str.split("").map(c => c + c).join("");
+
+console.log(doubleChar('samfwq'))
+
