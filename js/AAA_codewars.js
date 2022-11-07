@@ -478,21 +478,28 @@ const removeExclamationMarks3 = s => s.split('!').join('');
 const firstNonConsecutive = arr => {  
   let notConsecutive = null;
 
-
-  arr.forEach((el,i) => {
-
-    if ((el + 1) === arr[i + 1]) {
-      console.log('eeee')
-      notConsecutive = arr[i + 1]
+  for (let i = 0; i < arr.length - 1; i++) {
+    if ((arr[i] + 1) !== arr[i + 1]) {
+      return notConsecutive = arr[i + 1]
     }
-
-    // if (el + 1 !== arr[i + 1]){
-    //   // console.log(el)
-    //   // console.log(arr[i + 1])
-    //   return notConsecutive = arr[i + 1]
-    // }
-  })
+  }
 
   return notConsecutive
 }
-console.log(firstNonConsecutive([1,2,3,4,6,7,8]))
+
+// other solution 
+function firstNonConsecutive2(arr) {
+  for (let i = 0; i < arr.length - 1; ++i) {
+    if (arr[i] + 1 !== arr[i + 1]) {
+      return arr[i + 1]
+    }
+  }
+  return null
+}
+console.log(firstNonConsecutive([1,2,3,4,6,7,8,8,9,10,11,15,16,17]))
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+// If it is a square, return its area. If it is a rectangle, return its perimeter.
+const areaOrPerimeter = (l , w) =>  l === w ? (l * w) : 2 * (l + w)
