@@ -508,6 +508,21 @@ const areaOrPerimeter = (l , w) =>  l === w ? (l * w) : 2 * (l + w)
 // --------------------------------------------------------------------------------------------------------------------
 // Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
 const quarterOf = month => month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : month <= 12 ? 4 : null
-
 // other solution
 const quarterOf2 = m => Math.ceil(m/3);
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Create a function with two arguments that will return an array of the first n multiples of x.
+const countBy = (x, n) => {
+  let z = [];
+    for (let i = 1; i <= n; i++) {
+      z.push(x * i)
+    }  
+  return z
+}
+
+// other solution
+const countBy2 = (x, n) => Array.from({length: n}, (v, k) => (k + 1) * x)
+
+console.log(countBy(5,6))
