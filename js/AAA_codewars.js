@@ -554,3 +554,95 @@ const boolToWord = b => b ? 'Yes' : 'No'
 
 
 // --------------------------------------------------------------------------------------------------------------------
+// You live in the city of Cartesia where all roads are laid out in a perfect grid. 
+// You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. 
+// The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array 
+// of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block 
+// for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function 
+// that will return true if the walk the app gives you will take you exactly ten minutes 
+// (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+
+const isValidWalk = arr => {
+  if (arr.length !== 10) {
+    return false
+  } 
+  let currentN = 0
+  let currentS = 0
+  let currentE = 0
+  let currentW = 0
+
+  arr.forEach(el => {
+    switch (el) {
+      case 'n':
+        return currentN += 1;
+      case 's':
+        return currentS += 1;
+      case 'e':
+        return currentE += 1;
+      case 'w':
+        return currentW += 1;
+    }   
+  })
+    
+  console.log(currentN + 'n')
+  console.log(currentS + 's')
+  console.log(currentE + 'e')
+  console.log(currentW + 'w')
+  console.log('-----------------')
+
+  return (currentN === currentS) && (currentE === currentW)
+} 
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+
+// other solution
+function isValidWalk2(walk) {
+  var dx = 0
+  var dy = 0
+  var dt = walk.length
+  
+  for (var i = 0; i < walk.length; i++) {
+    switch (walk[i]) {
+      case 'n': dy--; break
+      case 's': dy++; break
+      case 'w': dx--; break
+      case 'e': dx++; break
+    }
+  }
+  
+  return dt === 10 && dx === 0 && dy === 0
+}
+
+function isValidWalk(walk) {
+  function count(val) {
+    return walk.filter(function(a){return a==val;}).length;
+  }
+  return walk.length==10 && count('n')==count('s') && count('w')==count('e');
+}
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Your task is to sort a given string. Each word in the string will contain a single number. 
+// This number is the position the word should have in the result "is2 Thi1s T4est 3a", "Thi1s is2 3a T4est"
+const order = w => {
+  if (w.length === 0) {
+    return ""
+  }
+
+  let arr = w.split(' ')
+  let newArr = []
+  arr.forEach((el, i, a) => {
+    let index = el.match(/\d/)[0]
+    newArr[index - 1] = el
+  }) 
+
+  console.log(newArr.join(' '))
+  return newArr.join(' ')
+}
+
+// other solution
+function order(words){
+  
+  return words.split(' ').sort(function(a, b){
+      return a.match(/\d/) - b.match(/\d/);
+   }).join(' ');
+}
