@@ -4,6 +4,12 @@ const digitize = n => ('' + n).split('').reverse().map(e => +e)
 // Someone good practice
 digitize = n => [...String(n)].map(Number).reverse()
 
+// test alternative split
+const spl = 'Abcde'
+const splArr = spl.split('')
+const splArr2 = [...spl]
+console.log(Array.isArray(splArr))
+console.log(Array.isArray(splArr2))
 
 // task2
 const friend = friends => friends.filter(el => el.length === 4);
@@ -26,6 +32,7 @@ accum = s => {
     return arr.join('')
   }).join('-')
 }
+
 console.log(accum('dSfYtZY'))
 // best practice
 function accum(s) {
@@ -667,7 +674,6 @@ const anotherClosure = () => {
   }
   return myFunction
 }
-
 const increment = anotherClosure()
 const a1 = increment()
 const a2 = increment()
@@ -679,10 +685,4 @@ const b1 = increTest()
 const b2 = increTest()
 const b3 = increTest()
 const b4 = increTest()
-console.log('b', b1, b2, b3, b4)
-
-let c = 4
-const addX = x => n => n + x
-const addThree = addX(3)
-let d = addThree(c)
-console.log('example partial application', d)
+console.log('b', b1, b2, b3)
