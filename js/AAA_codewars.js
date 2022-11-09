@@ -655,3 +655,34 @@ const paperwork = (n, m) => n <= 0 || m <= 0 ? 0 : n * m
 function paperwork(n, m) {
   return n > 0 && m > 0 ? n * m : 0
 }
+
+// --------------------------------------------------------------------------------------------------------------------
+// another closure practice
+
+const anotherClosure = () => {
+  let counter = 0
+  const myFunction = () => {
+    counter = counter + 1
+    return counter
+  }
+  return myFunction
+}
+
+const increment = anotherClosure()
+const a1 = increment()
+const a2 = increment()
+const a3 = increment()
+console.log('a', a1, a2, a3)
+
+const increTest = anotherClosure()
+const b1 = increTest()
+const b2 = increTest()
+const b3 = increTest()
+const b4 = increTest()
+console.log('b', b1, b2, b3, b4)
+
+let c = 4
+const addX = x => n => n + x
+const addThree = addX(3)
+let d = addThree(c)
+console.log('example partial application', d)
