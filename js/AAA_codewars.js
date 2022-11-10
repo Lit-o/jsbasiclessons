@@ -663,9 +663,9 @@ function paperwork(n, m) {
   return n > 0 && m > 0 ? n * m : 0
 }
 
+
 // --------------------------------------------------------------------------------------------------------------------
 // another closure practice
-
 const anotherClosure = () => {
   let counter = 0
   const myFunction = () => {
@@ -686,3 +686,23 @@ const b2 = increTest()
 const b3 = increTest()
 const b4 = increTest()
 console.log('b', b1, b2, b3)
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without 
+// any elements with the same value next to each other and preserving the original order of elements.
+const uniqueInOrderFirstVer = data => {
+  let arr = [...data]
+  // console.log(arr)
+
+  let newArr = arr.filter((el,i,ar) => {
+    console.log(ar[i+1])
+    return el !== ar[i+1]
+  })
+  return newArr
+}
+const uniqueInOrder = data => [...data].filter((el, i, ar) => el !== ar[i + 1])
+console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+
+
+// --------------------------------------------------------------------------------------------------------------------
