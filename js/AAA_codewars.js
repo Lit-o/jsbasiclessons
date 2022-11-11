@@ -656,9 +656,9 @@ function paperwork(n, m) {
   return n > 0 && m > 0 ? n * m : 0
 }
 
+
 // --------------------------------------------------------------------------------------------------------------------
 // another closure practice
-
 const anotherClosure = () => {
   let counter = 0
   const myFunction = () => {
@@ -686,3 +686,22 @@ const addX = x => n => n + x
 const addThree = addX(3)
 let d = addThree(c)
 console.log('example partial application', d)
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+// It should remove all values from list a, which are present in list b keeping their order.
+const arrayDiff = (a, b) => {
+  b.forEach(el => {
+    a = a.filter(e => {
+      return e !== el
+    })
+  })
+  return a
+}
+// other solution
+function array_diff(a, b) {
+  return a.filter(e => !b.includes(e));
+}
+
+console.log(arrayDiff([1,2,3,4], [1,2,3]))
