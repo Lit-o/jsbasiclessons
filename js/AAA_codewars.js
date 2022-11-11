@@ -4,6 +4,12 @@ const digitize = n => ('' + n).split('').reverse().map(e => +e)
 // Someone good practice
 digitize = n => [...String(n)].map(Number).reverse()
 
+// test alternative split
+const spl = 'Abcde'
+const splArr = spl.split('')
+const splArr2 = [...spl]
+console.log(Array.isArray(splArr))
+console.log(Array.isArray(splArr2))
 
 // task2
 const friend = friends => friends.filter(el => el.length === 4);
@@ -26,6 +32,7 @@ accum = s => {
     return arr.join('')
   }).join('-')
 }
+
 console.log(accum('dSfYtZY'))
 // best practice
 function accum(s) {
@@ -667,7 +674,6 @@ const anotherClosure = () => {
   }
   return myFunction
 }
-
 const increment = anotherClosure()
 const a1 = increment()
 const a2 = increment()
@@ -679,8 +685,10 @@ const b1 = increTest()
 const b2 = increTest()
 const b3 = increTest()
 const b4 = increTest()
-console.log('b', b1, b2, b3, b4)
+console.log('b', b1, b2, b3)
 
+
+<<<<<<< HEAD
 let c = 4
 const addX = x => n => n + x
 const addThree = addX(3)
@@ -705,3 +713,23 @@ function array_diff(a, b) {
 }
 
 console.log(arrayDiff([1,2,3,4], [1,2,3]))
+=======
+// --------------------------------------------------------------------------------------------------------------------
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without 
+// any elements with the same value next to each other and preserving the original order of elements.
+const uniqueInOrderFirstVer = data => {
+  let arr = [...data]
+  // console.log(arr)
+
+  let newArr = arr.filter((el,i,ar) => {
+    console.log(ar[i+1])
+    return el !== ar[i+1]
+  })
+  return newArr
+}
+const uniqueInOrder = data => [...data].filter((el, i, ar) => el !== ar[i + 1])
+console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+
+
+// --------------------------------------------------------------------------------------------------------------------
+>>>>>>> c8f285a28e5f5ee5b81cc266e9189a3666aff845
