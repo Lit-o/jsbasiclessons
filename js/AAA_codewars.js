@@ -688,12 +688,28 @@ const b4 = increTest()
 console.log('b', b1, b2, b3)
 
 
-<<<<<<< HEAD
 let c = 4
 const addX = x => n => n + x
 const addThree = addX(3)
 let d = addThree(c)
 console.log('example partial application', d)
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without 
+// any elements with the same value next to each other and preserving the original order of elements.
+const uniqueInOrderFirstVer = data => {
+  let arr = [...data]
+  // console.log(arr)
+
+  let newArr = arr.filter((el,i,ar) => {
+    console.log(ar[i+1])
+    return el !== ar[i+1]
+  })
+  return newArr
+}
+const uniqueInOrder = data => [...data].filter((el, i, ar) => el !== ar[i + 1])
+console.log(uniqueInOrder('AAAABBBCCDAABBB'))
 
 
 // --------------------------------------------------------------------------------------------------------------------
@@ -713,23 +729,3 @@ function array_diff(a, b) {
 }
 
 console.log(arrayDiff([1,2,3,4], [1,2,3]))
-=======
-// --------------------------------------------------------------------------------------------------------------------
-// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without 
-// any elements with the same value next to each other and preserving the original order of elements.
-const uniqueInOrderFirstVer = data => {
-  let arr = [...data]
-  // console.log(arr)
-
-  let newArr = arr.filter((el,i,ar) => {
-    console.log(ar[i+1])
-    return el !== ar[i+1]
-  })
-  return newArr
-}
-const uniqueInOrder = data => [...data].filter((el, i, ar) => el !== ar[i + 1])
-console.log(uniqueInOrder('AAAABBBCCDAABBB'))
-
-
-// --------------------------------------------------------------------------------------------------------------------
->>>>>>> c8f285a28e5f5ee5b81cc266e9189a3666aff845
