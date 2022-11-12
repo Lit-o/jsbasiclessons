@@ -727,5 +727,53 @@ const arrayDiff = (a, b) => {
 function array_diff(a, b) {
   return a.filter(e => !b.includes(e));
 }
-
 console.log(arrayDiff([1,2,3,4], [1,2,3]))
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, 
+// which is the number of times you must multiply the digits in num until you reach a single digit.
+const persistence = n => {
+  const spliteredNum = num => (num+'').split('')
+
+  const arrayToCheck = spliteredNum(n)
+  if (arrayToCheck.length <= 1) {return 0}
+
+  let counter = 1
+  let result = arrayToCheck.reduce((prev, current) => prev * current)
+  while (spliteredNum(result).length > 1) {
+    result = spliteredNum(result).reduce((prev, current) => prev * current)
+    // counter += 1
+    counter++
+  }
+
+  return counter
+}
+console.log(persistence(999))
+
+
+// other solutions
+function persistence(num) {
+  var times = 0;  
+  num = num.toString();
+
+  while (num.length > 1) {
+    times++;
+    num = num.split('').map(Number).reduce((a, b) => a * b).toString();
+  }
+  
+  return times;
+}
+// some kind of genius solution
+const persistence = num => {
+  return `${num}`.length > 1 
+    ? 1 + persistence(`${num}`.split('').reduce((a, b) => a * +b)) 
+    : 0;
+}
+
+function persistence(num) {
+  for (var i = 0; num > 9; i++) {
+    num = num.toString().split('').reduce((t, c) => c * t);
+  }
+  return i;
+}
