@@ -764,6 +764,7 @@ function persistence(num) {
   
   return times;
 }
+
 // some kind of genius solution
 const persistence = num => {
   return `${num}`.length > 1 
@@ -776,4 +777,63 @@ function persistence(num) {
     num = num.toString().split('').reduce((t, c) => c * t);
   }
   return i;
+}
+
+
+// ------------ELECTION--------------6kyu---------------------------------------------------------------
+// https://www.codewars.com/kata/554910d77a3582bbe300009c/javascript
+// Who won the election?
+// There are no given candidates. An elector can vote for anyone. 
+// Each ballot contains only one name and represents one vote for this name. A name is an arbitrary string, e.g. "A", "B", or "XJDHD".
+// A name wins the election if it gets more than n/2 votes (n = number of all votes, i.e. n is equal to the size of the given list).
+
+const getWinner = list => {
+  const votes = list.length
+  let candidates = []
+
+  list.forEach(el => {
+    if (candidates.every(e => Object.keys(e)[0] !== el)) {
+      candidates.push({[el]: 1})
+    } else {
+      candidates.forEach(elem => {
+        Object.keys(elem)[0] === el ? elem[el]++ : null
+      })
+    }
+  })
+  console.log(candidates)
+
+// ----Now-we-have-array-of-candidat-obj-->Let's-sort-it------>
+  candidates.sort((a, b) => {
+    return a[Object.keys(a)[0]] - b[Object.keys(b)[0]]
+  })
+  console.log(candidates)
+  
+// -----------Now-let's-takes-results-and-give-answer--------->
+  const winner = candidates[candidates.length - 1]
+  const winnerName = Object.keys(winner)[0]
+  const winnerVotes = winner[winnerName]
+  
+  if (winnerVotes > votes/2) {
+    return winnerName
+  } else {
+    return null
+  }
+} 
+
+console.log(getWinner(["B", "A", "A", "A", "B", "B", "B", "A", "C", "C", "A", "A", "A"]))
+
+// other solutions
+function getWinner(list) {
+  var result= {};
+  var winNumber = list.length / 2;
+  list.forEach(function(char) { ++result[char] || (result[char] = 1); });
+  var answer = Object.keys(result).filter(function(key) {if (result[key] > winNumber) return key; });
+  return answer[0] || null;
+}
+
+function getWinner(list) {
+  var arr = [], winNum = list.length/2;
+  list.forEach(function(val){ ++arr[val] || (arr[val]=1) });
+  for(var name in arr) if(arr[name] > winNum) return name;
+  return null;
 }
