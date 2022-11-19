@@ -837,3 +837,12 @@ function getWinner(list) {
   for(var name in arr) if(arr[name] > winNum) return name;
   return null;
 }
+
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+const invert = (array) => array.map(el => el*(-1))
+// other solution
+const invert2 = array => array.map(num => -num);
