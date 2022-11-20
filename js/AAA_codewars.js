@@ -4,6 +4,11 @@ const digitize = n => ('' + n).split('').reverse().map(e => +e)
 // Someone good practice
 digitize = n => [...String(n)].map(Number).reverse()
 
+// test arr to number
+const testArrToNum = [0, 5, '2', '3good5', '15']
+let testArrToNumMapped = testArrToNum.map(Number)
+console.log(testArrToNumMapped)
+
 // test alternative split
 const spl = 'Abcde'
 const splArr = spl.split('')
