@@ -851,3 +851,31 @@ function getWinner(list) {
 const invert = (array) => array.map(el => el*(-1))
 // other solution
 const invert2 = array => array.map(num => -num);
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+// (Math.floor(num * 100) / 100) => 300.239235 --> 300.23 // x.toFixed(2)
+// 1 --> 1 --> "1.00"
+// 2 --> 1 + 1/4 --> "1.25"
+
+const SeriesSumMy = n => {
+  let counter = 0
+  for (let i = 0; i < n; i++) {
+    counter = counter + 1/(1 + (3 * i))
+  }
+  return counter.toFixed(2)
+}
+
+// otherSol
+function SeriesSum(n) {
+  // because var "s" have global scope vision
+  for (var s = 0, i = 0; i < n; i++) {
+    s += 1 / (1 + i * 3)
+  }
+  
+  return s.toFixed(2)
+}
+console.log(SeriesSum(2))
