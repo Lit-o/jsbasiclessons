@@ -858,8 +858,6 @@ const invert2 = array => array.map(num => -num);
 // Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
 // (Math.floor(num * 100) / 100) => 300.239235 --> 300.23 // x.toFixed(2)
-// 1 --> 1 --> "1.00"
-// 2 --> 1 + 1/4 --> "1.25"
 
 const SeriesSumMy = n => {
   let counter = 0
