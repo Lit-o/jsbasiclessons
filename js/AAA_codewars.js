@@ -893,3 +893,40 @@ function openOrSenior(data){
 }
 
 console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]))
+
+
+// For a given string s find the character c (or C) with longest consecutive repetition and return: [c, l] 
+// For empty string return:["", 0]
+// ("aabbbaaabaaaa"), ["a",4] 
+const longestRepetition = s => {
+  let reallyMaxCount = 0
+  let reallyMaxChar = ''
+  let maxCount = 0
+  let maxChar = ''
+
+  const arr = [...s]
+
+  arr.forEach((el,i,a) => {
+    console.log(el)
+    if (el === a[i + 1]) {
+      maxCount++
+      maxChar = el
+    } else {
+      maxCount++
+      if (maxCount > reallyMaxCount) {
+        reallyMaxCount = maxCount
+        reallyMaxChar = maxChar
+        maxCount = 0
+        maxChar = ''
+      } 
+    }    
+  })
+  console.log(reallyMaxCount)
+  console.log(reallyMaxChar)
+  console.log(maxCount)
+  console.log(maxChar)
+
+  return [reallyMaxChar, reallyMaxCount]
+}
+
+console.log(longestRepetition("ba"))
