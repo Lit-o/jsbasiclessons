@@ -895,14 +895,12 @@ function openOrSenior(data){
 console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]))
 
 
+// --------------------------------------------------------------------------------------------------------------------
 // For a given string s find the character c (or C) with longest consecutive repetition and return: [c, l] 
 // For empty string return:["", 0]
 // ("aabbbaaabaaaa"), ["a",4] 
 const longestRepetition = s => {
-  let reallyMaxCount = 0
-  let reallyMaxChar = ''
-  let maxCount = 0
-  let maxChar = ''
+  let reallyMaxCount = 0;  let reallyMaxChar = '';  let maxCount = 0;  let maxChar = '';
 
   const arr = [...s]
 
@@ -912,21 +910,53 @@ const longestRepetition = s => {
       maxCount++
       maxChar = el
     } else {
+      maxChar = el
       maxCount++
       if (maxCount > reallyMaxCount) {
         reallyMaxCount = maxCount
         reallyMaxChar = maxChar
         maxCount = 0
         maxChar = ''
-      } 
-    }    
+      } else {
+        maxCount = 0
+        maxChar = ''
+      }
+    } 
   })
-  console.log(reallyMaxCount)
-  console.log(reallyMaxChar)
-  console.log(maxCount)
-  console.log(maxChar)
+
+  console.log(reallyMaxCount);  console.log(reallyMaxChar); console.log(maxCount); console.log(maxChar)
 
   return [reallyMaxChar, reallyMaxCount]
 }
 
 console.log(longestRepetition("ba"))
+
+// other solution
+const longestRepetition2 = s => s ?
+  s.match(/(.)\1*/g)
+    .map((s, i) => [s[0], s.length, i])
+    .sort((a, b) => (b[1] - a[1]) || (a[2] - b[2]))[0]
+    .splice(0, 2) :
+  ['', 0];
+//
+function longestRepetition(s) {
+  let count = 0;
+  let prevLetter = '';
+  
+  return s.toLowerCase().split('').reduce((acc, curr) => {
+    if(curr === prevLetter){
+      count++;
+    }
+    else{
+      count = 1;
+    }
+
+    if(count > acc[1]){
+      acc[1] = count;
+      acc[0] = curr;
+    }
+
+    prevLetter = curr;
+    return acc;
+  }, ['', 0]);
+} 
