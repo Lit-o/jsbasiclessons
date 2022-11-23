@@ -887,7 +887,7 @@ console.log(SeriesSum(2))
 
 const openOrSenior = arr => arr.map(e => e[0] >= 55 && e[1] > 7 ? 'Senior' : 'Open')
 
-// other solution with destructure
+// other solution with destructuring
 function openOrSenior(data){
   return data.map(([age, handicap]) => (age > 54 && handicap > 7) ? 'Senior' : 'Open');
 }
