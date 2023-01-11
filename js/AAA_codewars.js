@@ -960,3 +960,28 @@ function longestRepetition(s) {
     return acc;
   }, ['', 0]);
 } 
+
+
+
+const pineWood1 = (high) => {
+  let result = ''
+  for (let i = 0; i < high; i++) {
+    result = result + '*'
+    console.log(result)    
+  }
+}
+pineWood1(8)
+
+const pineWood2 = (high) => {
+  let result = ''
+
+  for (let i = 0; i < high; i++) {
+    for (let j = 0; j < i + 1; j++) {
+      result += '*'
+    }
+    result += '\n' //new string
+  }
+  return result
+}
+
+console.log(pineWood2(4))
