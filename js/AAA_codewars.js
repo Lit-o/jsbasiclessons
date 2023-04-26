@@ -998,3 +998,17 @@ first: for (let i = 0; i < 3; i++) {
     }
   }
 }
+
+
+// ------------------------
+const arr = [1, 1, 2, 3, 4, 2, 4, 4, 4, 5, 5]
+let objCopy = {}
+arr.forEach((el) => {
+  if (objCopy[el] === undefined) {
+    objCopy[el] = 1
+  } else {
+    objCopy[el] += 1
+  }
+})
+console.log(objCopy)
+// ------------------------
